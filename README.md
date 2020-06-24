@@ -3,7 +3,7 @@
 ## Conteudo
 
 Aqui irei apenas descrever o que será necessário para visualização dos relatorios 
-(Irei adicionar um README com o conteudo para facilitar a visualização)
+(Irei adicionar um README com o conteudo do relatorio de analise 1, apenas para demonstrar os tipos de dados visualizados, quando colocar outros relatorios de analises, existirão outros arquivos md e outros notebooks.)
 
 ## Arquivos
 
