@@ -4,7 +4,6 @@ Contem uma base com informações de imóveis e bairros do rio de janeiro.
 
 ## Importando base de dados
 
-
 ```python
 import pandas as pd
 ```
