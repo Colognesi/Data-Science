@@ -1,6 +1,7 @@
 # Relatorio analise 1
 Neste relatorio, foi feita uma analise exploratoria para descobrir o que continha estes dados.
 Contem uma base com informações de imóveis e bairros do rio de janeiro.
+Ao adicionar outros relatorios de analise, irei adicionar outros arquivos ".md" para visualização.
 
 ## Importando base de dados
 
