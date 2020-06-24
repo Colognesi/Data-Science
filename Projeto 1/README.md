@@ -353,7 +353,7 @@ type(dados)
 
 
 ```python
-# Verificando info para melhor visualizar as colucas e tipos de objetos
+# Verificando info para melhor visualizar as colunas e tipos de objetos
 dados.info()
 ```
 
