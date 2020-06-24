@@ -3,7 +3,7 @@
 ## Conteudo
 
 Aqui irei apenas descrever o que será necessário para visualização dos relatorios 
-(irei postar o html para facilitar a visualização)
+(Irei adicionar um README com o conteudo para facilitar a visualização)
 
 ## Arquivos
 
