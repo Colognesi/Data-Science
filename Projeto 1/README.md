@@ -8,12 +8,36 @@ Link para a área: [Relatório de analise 1](#fast_travel1)
 Realizado para isolar as categorias de imoveis, assim não veremos duplicatas.
 Link para a área: [Relatório de analise 2](#fast_travel2)
 
+## Relatorio de analise 3
+Relatorio realizado para isolar os tipos de imoveis apenas para imoveis residenciais.</br>
+Concluindo com a exportação do arquivo para outros relatorios.</br>
+
+Link para a área: [Relatório de analise 3](#fast_travel3)
+
+## Relatorio de analise 4
+Relatorio realizado com o objetivo de cumprir 4 criterios para seleção de itens:
+
+selecionar imoveis classificados por Apartamento</br>
+selecionar imoveis classificados como casa, casa de condominio e casa de vila</br>
+selecionar imoveis com area entre 60 e 100 m² incluindo os limites</br>
+selecionar imoveis que tenham pelo menos 4 quartos e aluguel menor que 2000</br>
+
+Link para a área: [Relatório de analise 4](#fast_travel4)
+
+## Relatorio de analise 5
+Relatorio para iniciar a tratativa de dados faltantes. Removendo alguns registros e adicionando valores a outros
+
+Link para a área: [Relatório de analise 5](#fast_travel5)
+
+## Relatorio de analise 6
+Criado para adicionar novas variaveis(colunas) e também removendo algumas.
+
+Link para a área: [Relatório de analise 6](#fast_travel6)
 
 # <a name = "fast_travel1"/> Relatorio analise 1
 
-Neste relatorio, foi feita uma analise exploratoria para descobrir o que continha estes dados.
-Contem uma base com informações de imóveis e bairros do rio de janeiro.
-Mais abaixo encontrará outros relatorios.
+Neste relatorio, foi feita uma analise exploratoria para descobrir o que continha estes dados.</br>
+Contem uma base com informações de imóveis e bairros do rio de janeiro.</br>
 
 ## Importando base de dados
 
@@ -1521,7 +1545,7 @@ tipo_de_imovel
 </div>
 
 
-# Relatorio de analise 3
+# <a name="fast_travel3"/> Relatorio de analise 3
 
 Neste notebook nosso objetivo é isolar apenas imoveis residenciais e exportar o arquivo contendo as informacoes.
 
@@ -2420,7 +2444,7 @@ dados_residencial_2
 <p>22580 rows × 9 columns</p>
 </div>
 
-# Relatorio de analise 4
+# <a name = "fast_travel4"/> Relatorio de analise 4
 
 ## Objetivo
 
@@ -2676,7 +2700,7 @@ print("Nº de Imoveis que tenham pelo menos 4 quartos e aluguel menor que 2000 -
     Nº de Imoveis com area entre 60 e 100 m² incluindo os limites -> 8719
     Nº de Imoveis que tenham pelo menos 4 quartos e aluguel menor que 2000 -> 41
     
-# Relatorio de analise 5
+# <a name="fast_travel5"/> Relatorio de analise 5
 
 ## tratamento de dados faltantes
 
@@ -3442,7 +3466,7 @@ dados.info()
 ```python
 dados.to_csv('dados/aluguel_residencial.csv', sep=';', index = False)
 ```
-# Relatorio de analise 6
+# <a name="fast_travel6"/> Relatorio de analise 6
 
 ## criando novas variaveis
 
