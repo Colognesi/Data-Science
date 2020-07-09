@@ -2,14 +2,14 @@
 
 ## Relatorio de analise 1
 Usado para descobrir os itens presentes na base de dados fornecida.
-Link para a área: [Relatório de analise 1](fast_travel1)
+Link para a área: [Relatório de analise 1](#fast_travel1)
 
 ## Relatorio de analise 2
 Realizado para isolar as categorias de imoveis, assim não veremos duplicatas.
-Link para a área: [Relatório de analise 2](fast_travel2)
+Link para a área: [Relatório de analise 2](#fast_travel2)
 
 
-# <a id="fast_travel1"/> Relatorio analise 1
+# <a name="fast_travel1"/a> Relatorio analise 1
 
 Neste relatorio, foi feita uma analise exploratoria para descobrir o que continha estes dados.
 Contem uma base com informações de imóveis e bairros do rio de janeiro.
@@ -669,7 +669,7 @@ print('A base de dados aprensenta {} registros (imóveis) e {} variaveis'.format
 
     A base de dados aprensenta 32960 registros (imóveis) e 9 variaveis
     
-# <a id="fast_travel2"/> Relatorio de analise 2
+# <a name="fast_travel2"/> Relatorio de analise 2
 
 
 ```python
