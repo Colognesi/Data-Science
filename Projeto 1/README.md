@@ -2663,4 +2663,774 @@ print("Nº de Imoveis que tenham pelo menos 4 quartos e aluguel menor que 2000 -
     Nº de Imoveis com area entre 60 e 100 m² incluindo os limites -> 8719
     Nº de Imoveis que tenham pelo menos 4 quartos e aluguel menor que 2000 -> 41
     
+# Relatorio de analise 5
 
+## tratamento de dados faltantes
+
+
+```python
+import pandas as pd
+```
+
+
+```python
+dados = pd.read_csv('dados/aluguel_residencial.csv', sep=';')
+```
+
+
+```python
+dados.head()
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Tipo</th>
+      <th>Bairro</th>
+      <th>Quartos</th>
+      <th>Vagas</th>
+      <th>Suites</th>
+      <th>Area</th>
+      <th>Valor</th>
+      <th>Condominio</th>
+      <th>IPTU</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Quitinete</td>
+      <td>Copacabana</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>40</td>
+      <td>1700.0</td>
+      <td>500.0</td>
+      <td>60.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Casa</td>
+      <td>Jardim Botânico</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>100</td>
+      <td>7000.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Apartamento</td>
+      <td>Centro</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>15</td>
+      <td>800.0</td>
+      <td>390.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Apartamento</td>
+      <td>Higienópolis</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>48</td>
+      <td>800.0</td>
+      <td>230.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Apartamento</td>
+      <td>Vista Alegre</td>
+      <td>3</td>
+      <td>1</td>
+      <td>0</td>
+      <td>70</td>
+      <td>1200.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+# vamos remover dados Nan, existe a funcao isnull para encontrar esses carinhas
+dados.isnull()
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Tipo</th>
+      <th>Bairro</th>
+      <th>Quartos</th>
+      <th>Vagas</th>
+      <th>Suites</th>
+      <th>Area</th>
+      <th>Valor</th>
+      <th>Condominio</th>
+      <th>IPTU</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>22575</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>22576</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>22577</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>22578</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>22579</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>22580 rows × 9 columns</p>
+</div>
+
+
+
+
+```python
+# tambem temos o notnull
+dados.notnull()
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Tipo</th>
+      <th>Bairro</th>
+      <th>Quartos</th>
+      <th>Vagas</th>
+      <th>Suites</th>
+      <th>Area</th>
+      <th>Valor</th>
+      <th>Condominio</th>
+      <th>IPTU</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>22575</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>22576</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>22577</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>22578</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>22579</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<p>22580 rows × 9 columns</p>
+</div>
+
+
+
+
+```python
+dados.info()
+```
+
+    <class 'pandas.core.frame.DataFrame'>
+    RangeIndex: 22580 entries, 0 to 22579
+    Data columns (total 9 columns):
+     #   Column      Non-Null Count  Dtype  
+    ---  ------      --------------  -----  
+     0   Tipo        22580 non-null  object 
+     1   Bairro      22580 non-null  object 
+     2   Quartos     22580 non-null  int64  
+     3   Vagas       22580 non-null  int64  
+     4   Suites      22580 non-null  int64  
+     5   Area        22580 non-null  int64  
+     6   Valor       22571 non-null  float64
+     7   Condominio  20765 non-null  float64
+     8   IPTU        15795 non-null  float64
+    dtypes: float64(3), int64(4), object(2)
+    memory usage: 1.6+ MB
+    
+
+
+```python
+dados['Valor'].isnull()
+```
+
+
+
+
+    0        False
+    1        False
+    2        False
+    3        False
+    4        False
+             ...  
+    22575    False
+    22576    False
+    22577    False
+    22578    False
+    22579    False
+    Name: Valor, Length: 22580, dtype: bool
+
+
+
+
+```python
+dados[dados['Valor'].isnull()]
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Tipo</th>
+      <th>Bairro</th>
+      <th>Quartos</th>
+      <th>Vagas</th>
+      <th>Suites</th>
+      <th>Area</th>
+      <th>Valor</th>
+      <th>Condominio</th>
+      <th>IPTU</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>58</th>
+      <td>Apartamento</td>
+      <td>Barra da Tijuca</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>70</td>
+      <td>NaN</td>
+      <td>970.0</td>
+      <td>68.0</td>
+    </tr>
+    <tr>
+      <th>1492</th>
+      <td>Apartamento</td>
+      <td>Leme</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>75</td>
+      <td>NaN</td>
+      <td>878.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1683</th>
+      <td>Casa</td>
+      <td>Campo Grande</td>
+      <td>3</td>
+      <td>4</td>
+      <td>3</td>
+      <td>363</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>Apartamento</td>
+      <td>Botafogo</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>95</td>
+      <td>NaN</td>
+      <td>1010.0</td>
+      <td>170.0</td>
+    </tr>
+    <tr>
+      <th>2034</th>
+      <td>Apartamento</td>
+      <td>Copacabana</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>72</td>
+      <td>NaN</td>
+      <td>850.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4941</th>
+      <td>Casa</td>
+      <td>Campo Grande</td>
+      <td>3</td>
+      <td>2</td>
+      <td>1</td>
+      <td>100</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8568</th>
+      <td>Apartamento</td>
+      <td>Leme</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>75</td>
+      <td>NaN</td>
+      <td>878.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8947</th>
+      <td>Apartamento</td>
+      <td>Glória</td>
+      <td>3</td>
+      <td>0</td>
+      <td>1</td>
+      <td>135</td>
+      <td>NaN</td>
+      <td>910.0</td>
+      <td>228.0</td>
+    </tr>
+    <tr>
+      <th>9149</th>
+      <td>Apartamento</td>
+      <td>Gávea</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>105</td>
+      <td>NaN</td>
+      <td>880.0</td>
+      <td>221.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+# podemos usar o dropna para remover os dados nan
+a = dados.shape[0]
+dados.dropna(subset = ['Valor'], inplace = True)
+b = dados.shape[0]
+a - b
+```
+
+
+
+
+    9
+
+
+
+
+```python
+# removemos os valores nan, agora iremos remover os condominios nan
+dados[dados['Valor'].isnull()]
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Tipo</th>
+      <th>Bairro</th>
+      <th>Quartos</th>
+      <th>Vagas</th>
+      <th>Suites</th>
+      <th>Area</th>
+      <th>Valor</th>
+      <th>Condominio</th>
+      <th>IPTU</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+# sabemos que existem 1813 codominios nulos
+dados[dados['Condominio'].isnull()].shape[0]
+```
+
+
+
+
+    1813
+
+
+
+
+```python
+selecao = (dados['Tipo'] == 'Apartamento') & (dados['Condominio'].isnull())
+a = dados.shape[0]
+dados = dados[~selecao] # para inverter a series boleana, usamos o ~, o que é true vira false e o que e false vira true
+b = dados.shape[0]
+a - b
+```
+
+
+
+
+    745
+
+
+
+
+```python
+dados[dados['Condominio'].isnull()].shape[0]
+```
+
+
+
+
+    1068
+
+
+
+
+```python
+# para nao jogarmos o restante dos valores fora, faremos o seguinte:
+dados = dados.fillna({'Condominio':0, 'IPTU':0})
+```
+
+
+```python
+dados[dados['Condominio'].isnull()].shape[0]
+```
+
+
+
+
+    0
+
+
+
+
+```python
+dados[dados['IPTU'].isnull()].shape[0]
+```
+
+
+
+
+    0
+
+
+
+
+```python
+dados.info()
+```
+
+    <class 'pandas.core.frame.DataFrame'>
+    Int64Index: 21826 entries, 0 to 22579
+    Data columns (total 9 columns):
+     #   Column      Non-Null Count  Dtype  
+    ---  ------      --------------  -----  
+     0   Tipo        21826 non-null  object 
+     1   Bairro      21826 non-null  object 
+     2   Quartos     21826 non-null  int64  
+     3   Vagas       21826 non-null  int64  
+     4   Suites      21826 non-null  int64  
+     5   Area        21826 non-null  int64  
+     6   Valor       21826 non-null  float64
+     7   Condominio  21826 non-null  float64
+     8   IPTU        21826 non-null  float64
+    dtypes: float64(3), int64(4), object(2)
+    memory usage: 1.7+ MB
+    
+
+
+```python
+dados.to_csv('dados/aluguel_residencial.csv', sep=';', index = False)
+```
+
+
+```python
+
+```
