@@ -2,10 +2,12 @@
 
 ## Relatorio de analise 1
 Usado para descobrir os itens presentes na base de dados fornecida.
+
 Link para a área: [Relatório de analise 1](#fast_travel1)
 
 ## Relatorio de analise 2
 Realizado para isolar as categorias de imoveis, assim não veremos duplicatas.
+
 Link para a área: [Relatório de analise 2](#fast_travel2)
 
 ## Relatorio de analise 3
