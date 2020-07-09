@@ -1,20 +1,26 @@
 # Resumo dos relatórios
+Nesse readme, irei postar o todos os dados extraídos e a progressão feita nessa analise.</br> 
+Também irei adicionar links para os relatorios separados, para caso queira verificar um relatorio em particular.
 
 ## Relatorio de analise 1
 Usado para descobrir os itens presentes na base de dados fornecida.
 
-Link para a área: [Relatório de analise 1](#fast_travel1)
+Link para a área: [Relatório de analise 1](#fast_travel1)</br>
+Caso queira verificar este relatório separadamente, o link é este: [Relatório de analise 1 separado](https://github.com/Colognesi/Data-Science/blob/master/Projeto%201/Relatorios%20MD%20separados/Base%20de%20Dados%20(relatorio1).md)
 
 ## Relatorio de analise 2
 Realizado para isolar as categorias de imoveis, assim não veremos duplicatas.
 
-Link para a área: [Relatório de analise 2](#fast_travel2)
+Link para a área: [Relatório de analise 2](#fast_travel2)</br>
+Caso queira verificar este relatório separadamente, o link é este: [Relatório de analise 2 separado](https://github.com/Colognesi/Data-Science/blob/master/Projeto%201/Relatorios%20MD%20separados/Tipos%20de%20Imoveis%20(relatorio2).md)
+
 
 ## Relatorio de analise 3
 Relatorio realizado para isolar os tipos de imoveis apenas para imoveis residenciais.</br>
 Concluindo com a exportação do arquivo para outros relatorios.</br>
 
-Link para a área: [Relatório de analise 3](#fast_travel3)
+Link para a área: [Relatório de analise 3](#fast_travel3)</br>
+Caso queira verificar este relatório separadamente, o link é este: [Relatório de analise 3 separado](https://github.com/Colognesi/Data-Science/blob/master/Projeto%201/Relatorios%20MD%20separados/Im%C3%B3veis%20Residenciais%20(relatorio3).md)
 
 ## Relatorio de analise 4
 Relatorio realizado com o objetivo de cumprir 4 criterios para seleção de itens:
@@ -24,17 +30,23 @@ selecionar imoveis classificados como casa, casa de condominio e casa de vila</b
 selecionar imoveis com area entre 60 e 100 m² incluindo os limites</br>
 selecionar imoveis que tenham pelo menos 4 quartos e aluguel menor que 2000</br>
 
-Link para a área: [Relatório de analise 4](#fast_travel4)
+Link para a área: [Relatório de analise 4](#fast_travel4)</br>
+Caso queira verificar este relatório separadamente, o link é este: [Relatório de analise 4 separado](https://github.com/Colognesi/Data-Science/blob/master/Projeto%201/Relatorios%20MD%20separados/Selecoes%20e%20Frequencias%20(relatorio4).md)
 
 ## Relatorio de analise 5
 Relatorio para iniciar a tratativa de dados faltantes. Removendo alguns registros e adicionando valores a outros
 
-Link para a área: [Relatório de analise 5](#fast_travel5)
+Link para a área: [Relatório de analise 5](#fast_travel5)</br>
+Caso queira verificar este relatório separadamente, o link é este: [Relatório de analise 5 separado](https://github.com/Colognesi/Data-Science/blob/master/Projeto%201/Relatorios%20MD%20separados/Tratamento%20de%20dados%20faltantes(relatorio5).md)
 
 ## Relatorio de analise 6
 Criado para adicionar novas variaveis(colunas) e também removendo algumas.
 
-Link para a área: [Relatório de analise 6](#fast_travel6)
+Link para a área: [Relatório de analise 6](#fast_travel6)</br>
+Caso queira verificar este relatório separadamente, o link é este: [Relatório de analise 6 separado](https://github.com/Colognesi/Data-Science/blob/master/Projeto%201/Relatorios%20MD%20separados/criando%20novas%20variaveis(relatorio6).md)
+
+</br></br></br></br></br></br></br></br></br></br></br></br></br>
+
 
 # <a name = "fast_travel1"/> Relatorio analise 1
 
