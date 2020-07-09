@@ -1,4 +1,16 @@
-# Relatorio analise 1
+# Resumo dos relatórios
+
+## Relatorio de analise 1
+Usado para descobrir os itens presentes na base de dados fornecida.
+Link para a área: [Relatório de analise 1](fast_travel1)
+
+## Relatorio de analise 2
+Realizado para isolar as categorias de imoveis, assim não veremos duplicatas.
+Link para a área: [Relatório de analise 2](fast_travel2)
+
+
+# <a id="fast_travel1"/> Relatorio analise 1
+
 Neste relatorio, foi feita uma analise exploratoria para descobrir o que continha estes dados.
 Contem uma base com informações de imóveis e bairros do rio de janeiro.
 Mais abaixo encontrará outros relatorios.
@@ -657,7 +669,7 @@ print('A base de dados aprensenta {} registros (imóveis) e {} variaveis'.format
 
     A base de dados aprensenta 32960 registros (imóveis) e 9 variaveis
     
-# Relatorio de analise 2
+# <a id="fast_travel2"/> Relatorio de analise 2
 
 
 ```python
@@ -1508,15 +1520,16 @@ tipo_de_imovel
 </table>
 </div>
 
-```python
-import pandas as pd
-```
 
 # Relatorio de analise 3
 
 Neste notebook nosso objetivo é isolar apenas imoveis residenciais e exportar o arquivo contendo as informacoes.
 
 ## Imoveis residenciais
+
+```python
+import pandas as pd
+```
 
 
 ```python
