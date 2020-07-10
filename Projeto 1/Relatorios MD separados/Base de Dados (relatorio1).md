@@ -185,9 +185,6 @@ dados
 ```
 
 
-
-
-<div><a href="https://github.com/Colognesi/Data-Science/blob/master/Projeto%201/Relatorios%20MD%20separados/criando%20novas%20variaveis(relatorio6).md" target="_blank">Relatório de analise 6 separado</a>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
