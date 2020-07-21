@@ -47,12 +47,12 @@ Link para a área: [Relatório de analise 6](#fast_travel6)</br>
 Caso queira verificar este relatório separadamente, o link é este: <a href="https://github.com/Colognesi/Data-Science/blob/master/Projeto%201/Relatorios%20MD%20separados/criando%20novas%20variaveis(relatorio6).md" target="_blank">Relatório de analise 6 separado</a>
 
 ## Relatorio de analise 7
-Relatorio realizado para realizar uma analise descritiva dos dados, como frequencias, medias de valores e representações graficas de locais
+Relatorio realizado para realizar uma analise descritiva dos dados, como frequencias, medias de valores e representações graficas de locais</br>
 Link para a área: [Relatório de analise 7](#fast_travel7)</br>
-Caso queira verificar este relatório separadamente, o link é este: <a href="">Relatório de analise 6 separado</a></br>
+Caso queira verificar este relatório separadamente, o link é este: <a href="https://github.com/Colognesi/Data-Science/blob/master/Projeto%201/Relatorios%20MD%20separados/Criando%20Agrupamentos.md">Relatório de analise 6 separado</a></br>
 
-Também realizei uma verificação nas maiores frequencias, separei os bairros com maior quantidades de entradas com base em seus valores de locação.</br>
-O link para esta área> [Relatorio com base na frequencia](#fast_travel71)
+Também realizei uma verificação nas maiores frequencias, separei os bairros com maior quantidades de entradas e realizei uma demonstração gráfica de seus valores.</br>
+O link para esta área: [Relatorio com base na frequencia](#fast_travel71)
 
 
 </br></br></br></br></br></br></br></br></br></br></br></br></br>
@@ -5298,7 +5298,7 @@ fig.set_title('Valor medio do aluguel por Bairro',{'fontsize':22})
 
 
 
-![png](output_19_1.png)
+![png](https://github.com/Colognesi/Data-Science/blob/master/Projeto%201/Dados/output_19_1.png)
 
 
 ### <a name = 'fast_travel71'/> Analise de aluguel por bairro (bairros com maiores frequencias)
@@ -5514,7 +5514,7 @@ fig.set_title('Valor do aluguel',{'fontsize':22})
 
 
 
-![png](output_27_1.png)
+![png](https://github.com/Colognesi/Data-Science/blob/master/Projeto%201/Dados/output_27_1.png)
 
 
 
@@ -5635,7 +5635,7 @@ sns.lineplot(data=res2 , x='Bairro',y='Valor')
 
 
 
-![png](output_32_1.png)
+![png](https://github.com/Colognesi/Data-Science/blob/master/Projeto%201/Dados/output_32_1.png)
 
 
 
@@ -5651,7 +5651,7 @@ sns.pairplot(x_vars='Bairro', y_vars='Valor', data=res2, height=8, hue="Bairro")
 
 
 
-![png](output_33_1.png)
+![png](https://github.com/Colognesi/Data-Science/blob/master/Projeto%201/Dados/output_33_1.png)
 
 
 
@@ -5663,18 +5663,14 @@ plt.plot()
 ```
 
 
-
-
-    []
-
-
-
-
-![png](output_34_1.png)
+![png](https://github.com/Colognesi/Data-Science/blob/master/Projeto%201/Dados/output_34_1.png)
 
 
 
 ```python
-
+# A nossa intenção, era demonstrar de forma gráfica a distribuição dos valores, 
+# com o gráfico acima, conseguimos verificar isso.
+# Os valores mostram até 2000, porque o valor que selecionamos é de menor ou igual a 1500, 
+# então ele nos deu uma linha que ia caindo apos o parametro que colocamos.
 ```
 
