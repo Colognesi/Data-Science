@@ -3,6 +3,8 @@
 Arquivos do projeto do curso 3 de data science fornecido pela instituição Alura.<br>
 Foi utilizada a base de dados PNAD datada de 2015 para a realização das analises aqui presentes<br>
 
+Em um breve resumo, nos notebooks aqui listados, foram realizados estudos sobre como adquirir as Medidas de tendência central assim como realizar alguns testes e gerar alguns graficos simples.
+
 ## Arquivos
 
 -- O arquivo Análise_Descritiva.ipynb, é o notebook utilizado para realizar os exercicíos fornecidos pelo professor Rodrigo Fernando Dias.<br> 
