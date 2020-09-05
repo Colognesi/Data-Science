@@ -1,16 +1,13 @@
 # Conteúdo
 
-Arquivos do projeto do curso 3 de data science fornecido pela instituição Alura.<br>
+Arquivos do projeto do curso 3 e 4 de data science fornecido pela instituição Alura.<br>
 Foi utilizada a base de dados PNAD datada de 2015 para a realização das analises aqui presentes<br>
 
 ## Arquivos
 
--- O arquivo Análise_Descritiva.ipynb, é o notebook utilizado para realizar os exercicíos fornecidos pelo professor Rodrigo Fernando Dias.<br> 
-Neste notebook foram realizados os desafios propostos pelo professor. (caso queira verificar, este é o notebook no qual apliquei o que aprendi nas aulas).
-
--- O arquivo Curso de estatística parte 1.ipynb, é o notebook utilizado para as anotações vistas em aula.
-
--- Dentro da pasta Curso de Estatística, pode encontrar o arquivo csv utilizado como base de dados para os estudos e exercícios.
+-- Neste local, existe apenas 2 pastas contendo as partes 1 e 2 dos cursos<br>
+-- No curso 1, consta estudos realizados para adquirir medidas de tendência cental e sobre como gerar alguns gráficos.<br>
+-- No curso 2, foram realizados estudos sobre probabilidade e amostragem.
 
 ## Fonte dos dados
 https://ww2.ibge.gov.br/home/estatistica/populacao/trabalhoerendimento/pnad2015/microdados.shtm
