@@ -10,3 +10,7 @@ Aqui também estão presentes pastas para separação dos modelos de regressão 
 ## Arquivos
 Regressao Linear - Exercicio.ipynb: Notebook usado para realização dos exercícios, contém de forma direta perguntas e respostas sem muitos comentários.<br><br>
 Regressão Linear.ipynb: Exercicio com o conteudo do curso, possui mais informações que o de exercicios (como formulas usadas para chegar a X resultado por exemplo).
+
+## Fonte dos dados
+Fonte: https://www.kaggle.com/dongeorge/beer-consumption-sao-paulo <br>
+Maior descrição estará disponível no notebook: Regressão Linear.ipynb
